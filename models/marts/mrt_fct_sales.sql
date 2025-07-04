@@ -10,12 +10,12 @@ from {{ref('stg_retail__fact_sales')}}
 
 join {{ref('stg_retail__dim_customers')}} c
 
-using customer_id
+using (customer_id)
 
 join {{ref('stg_retail__dim_stores')}} s 
 
-using store_id
+using (store_id)
 
 join {{ref('stg_retail__dim_products')}} p 
 
-using product_id
+using (product_id)
