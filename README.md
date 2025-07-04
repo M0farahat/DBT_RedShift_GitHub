@@ -1,15 +1,17 @@
-Welcome to your new dbt project!
+# dbt Retail Analytics Project 🚀
 
-### Using the starter project
+This project showcases my experience building a full data pipeline using **dbt Cloud**, **Amazon Redshift**, and **GitHub**.
 
-Try running the following commands:
-- dbt run
-- dbt test
+---
+
+## 🧱 Project Stack
+
+- **dbt Cloud**: For model development, version control, and scheduling
+- **Amazon Redshift**: As the data warehouse
+- **GitHub**: Integrated for version control and collaboration
+- **dbt Scheduler**: To automate model runs and data freshness
+
+---
 
 
-### Resources:
-- Learn more about dbt [in the docs](https://docs.getdbt.com/docs/introduction)
-- Check out [Discourse](https://discourse.getdbt.com/) for commonly asked questions and answers
-- Join the [dbt community](https://getdbt.com/community) to learn from other analytics engineers
-- Find [dbt events](https://events.getdbt.com) near you
-- Check out [the blog](https://blog.getdbt.com/) for the latest news on dbt's development and best practices
+
