@@ -1,13 +1,19 @@
-select
+WITH sales_by_month AS (
+   SELECT
+       EXTRACT(YEAR FROM sale_date) AS year,
+       EXTRACT(MONTH FROM sale_date) AS month,
+       SUM(total_amount) AS total_sales,
+       COUNT(DISTINCT sale_id) AS total_transactions
+   FROM {{ ref('stg_retail__fact_sales') }}
+   GROUP BY year,month
+)
 
-extract(year from sale_date) as year,
-extract(month from sale_date) as month,
-count (sale_id) as total_transactions,
-sum (total_amount) as total_salesو
-total_sales / total_transactions AS avg_sales_per_transaction
 
-from {{ref('stg_retail__fact_sales')}}
-
-group by 1,2
-
-order by year,month ;
+SELECT
+   year,
+   month,
+   total_sales,
+   total_transactions,
+   total_sales / total_transactions AS avg_sales_per_transaction
+FROM sales_by_month
+ORDER BY month,year

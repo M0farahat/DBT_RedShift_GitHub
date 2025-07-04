@@ -1,10 +1,10 @@
-with customer_sales as (
+with customer_sales AS (
     select
     s.customer_id,
-    sum (s..quantity_sold) as total_purchases,
-    sum (s.total_amount) as total_spend
+    sum (s.quantity_sold) AS total_purchases,
+    sum (s.total_amount) AS total_spend
     from {{ref('stg_retail__fact_sales')}} s
-    group by 1
+    GROUP BY s.customer_id
 )
 
 SELECT
